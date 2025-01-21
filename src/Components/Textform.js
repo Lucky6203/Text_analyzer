@@ -54,16 +54,16 @@ export default function Textform(props) {
   };
   return (
     <>
-      <div className="container " style={{backgroundColor: props.mode==='light'?'#fff':'grey' }} >
+      <div className="container " style={{backgroundColor: props.mode==='light'?'#fff':'#042743' }} >
         <h1 style={{color: props.mode==='light'?'black':'#fff' }} >{props.heading}</h1>
 
-        <div className="mb-3" style={{backgroundColor: props.mode==='light'?'#fff':'grey'}}>
+        <div className="mb-3" style={{backgroundColor: props.mode==='light'?'#fff':'#042743'}}>
           <textarea
             className="form-control"
             id="mybox"
             value={text}
             onChange={handleOnChange}
-            style={{backgroundColor: props.mode==='light'?'#fff':'grey' ,color:props.mode==='light'?'black':'#fff' }}
+            style={{backgroundColor: props.mode==='light'?'#fff':'#042743' ,color:props.mode==='light'?'black':'#fff' }}
             rows="8"
           ></textarea>
         </div>
@@ -85,7 +85,7 @@ export default function Textform(props) {
         </button>
       </div>
 
-      <div className="container my-1" style={{backgroundColor: props.mode==='light'?'#fff':'grey',color:props.mode==='light'?'black':'#fff' }}>
+      <div className="container my-1" style={{backgroundColor: props.mode==='light'?'#fff':'#042743',color:props.mode==='light'?'black':'#fff' }}>
         <h1  style={{color: props.mode==='light'?'black':'#fff' }}>Your text summary</h1>
         <p>
           {text.split(" ").length} words and {text.length} charactrs
@@ -94,7 +94,7 @@ export default function Textform(props) {
         <p> Sentences {calculateSentences(text)} </p>
         <p> Paragraphs {calculateParagraphsInText(text)} </p>
         <h2  style={{color: props.mode==='light'?'black':'#fff' }}>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length>0?text:"Enter something in the textbox above to preview it here"}</p>
       </div>
     </>
   );
